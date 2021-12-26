@@ -4,7 +4,7 @@ This is prediction market, that allows users to place bids on their expectations
 This contract was instantiated with 2 candidates, the max number of candidates allowed is 5. 
 The contract can be improved by making it host other prediction markets, rather than the current configuration set now (i.e. just one prediction market)
 
-link to DApp [https://itsenoitseno.github.io/Celo-Prediction-Market/](DAppLINK)
+[DappLINK](https://itsenoitseno.github.io/Celo-Prediction-Market/)
 # Install
 
 ```
