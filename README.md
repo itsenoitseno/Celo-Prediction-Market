@@ -1,3 +1,10 @@
+# CELO PREDICTION MARKET
+This is prediction market, that allows users to place bids on their expectations. This particular contract is built in view of elections, where users now have the ability to place bids on their choice candidates and get rewards if their candidates do win the election. The Oracle (i.e. the address in charge of the election) provides the winner for the election.
+
+This contract was instantiated with 2 candidates, the max number of candidates allowed is 5. 
+The contract can be improved by making it host other prediction markets, rather than the current configuration set now (i.e. just one prediction market)
+
+link to DApp [https://itsenoitseno.github.io/Celo-Prediction-Market/](DAppLINK)
 # Install
 
 ```
