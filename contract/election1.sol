@@ -46,8 +46,8 @@ contract PredictionMarket {
             ),
             "Transfer failed"
         );
-        bets[_side] += betAmount;
-        betsPerGambler[msg.sender][_side] += betAmount;
+        bets[_side] = bets[_side].add(betAmount);
+        betsPerGambler[msg.sender][_side] =  betsPerGambler[msg.sender][_side].add(betAmount) ;
         
     }
 
@@ -64,7 +64,7 @@ contract PredictionMarket {
 
     function reportResult(Side _winner, Side _loser) external {
         require(oracle == msg.sender, 'only oracle');
-        require(electionFinished == false, 'election is alredy finished');
+        require(electionFinished == false, 'election is already finished');
         result.winner = _winner;
         result.loser = _loser;
         electionFinished = true;       
