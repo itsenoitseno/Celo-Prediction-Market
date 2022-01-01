@@ -1,210 +1,253 @@
 [
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_oracle",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_marketTopic",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_noOfContestants",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string[]",
-				"name": "_contestants",
-				"type": "string[]"
-			},
-			{
-				"internalType": "string[]",
-				"name": "_contestantImages",
-				"type": "string[]"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "enum PredictionMarket.Side",
-				"name": "_winner",
-				"type": "uint8"
-			}
-		],
-		"name": "declareWinner",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "electionFinished",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "enum PredictionMarket.Side",
-				"name": "_side",
-				"type": "uint8"
-			}
-		],
-		"name": "getCandidatesData",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getNoOfContestants",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getTopic",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "enum PredictionMarket.Side",
-				"name": "_side",
-				"type": "uint8"
-			}
-		],
-		"name": "getUserStakes",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "enum PredictionMarket.Side",
-				"name": "_side",
-				"type": "uint8"
-			}
-		],
-		"name": "isStaker",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "oracle",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "enum PredictionMarket.Side",
-				"name": "_side",
-				"type": "uint8"
-			},
-			{
-				"internalType": "uint256",
-				"name": "stakeAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "placeBet",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdrawGain",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	}
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_oracle",
+                "type": "address"
+            },
+            {
+                "internalType": "string",
+                "name": "_marketTopic",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_noOfContestants",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string[]",
+                "name": "_contestants",
+                "type": "string[]"
+            },
+            {
+                "internalType": "string[]",
+                "name": "_contestantImages",
+                "type": "string[]"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_contestantName",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_placedBets",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "_contestantImage",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_noOfStakes",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address[]",
+                "name": "_stakers",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "_amountStaked",
+                "type": "uint256[]"
+            },
+            {
+                "internalType": "bool",
+                "name": "_isWinner",
+                "type": "bool"
+            }
+        ],
+        "name": "addCandidateData",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "enum PredictionMarket.Side",
+                "name": "_winner",
+                "type": "uint8"
+            }
+        ],
+        "name": "declareWinner",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "electionFinished",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "enum PredictionMarket.Side",
+                "name": "_side",
+                "type": "uint8"
+            }
+        ],
+        "name": "getCandidatesData",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address[]",
+                "name": "",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+            },
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getNoOfContestants",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getTopic",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "enum PredictionMarket.Side",
+                "name": "_side",
+                "type": "uint8"
+            }
+        ],
+        "name": "getUserStakes",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "enum PredictionMarket.Side",
+                "name": "_side",
+                "type": "uint8"
+            }
+        ],
+        "name": "isStaker",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "oracle",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "enum PredictionMarket.Side",
+                "name": "_side",
+                "type": "uint8"
+            },
+            {
+                "internalType": "uint256",
+                "name": "stakeAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "placeBet",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "withdrawGain",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
 ]

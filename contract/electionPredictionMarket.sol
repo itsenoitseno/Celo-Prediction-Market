@@ -16,6 +16,7 @@ interface IERC20Token {
 
 contract PredictionMarket {
 
+    uint internal contestantsLength = 0;
     address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
     enum Side { 
@@ -40,11 +41,8 @@ contract PredictionMarket {
         Side winner;
     }
 
-
-
     Result result;
     bool public electionFinished;
-
 
     // mapping(Side => uint256) public bets;
     mapping(address => mapping(Side => uint256)) betsPerGambler;
@@ -108,6 +106,30 @@ contract PredictionMarket {
 
     function getNoOfContestants() public view returns(uint){
         return(noOfContestants);
+    }
+
+    // add vandidate data
+    function addCandidateData(
+        string memory _contestantName,
+        uint256 _placedBets,
+        string memory _contestantImage,
+        uint _noOfStakes,
+        address[] memory _stakers,
+        uint256[] memory _amountStaked,
+        bool _isWinner
+    ) public {
+        _isWinner = false;
+        Side _side = Side.Contestant1;
+        contestantsData[_side] = contestantDataTemplate(
+            _contestantName,
+            _placedBets,
+            _contestantImage,
+            _noOfStakes,
+            _stakers,
+            _amountStaked,
+            _isWinner
+        );
+        contestantsLength++;
     }
 
     function getCandidatesData(Side _side) public view returns(
